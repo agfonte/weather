@@ -1,2 +1,2 @@
-# Weather
-A simple weather app in React
+# weather
+Sandbox project
