@@ -13,10 +13,12 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import LinkMaterial from "@mui/material/Link";
+import {useState} from 'react';
 
 const theme = createTheme();
 
 export default function SignIn() {
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -54,6 +56,9 @@ export default function SignIn() {
                             name="email"
                             autoComplete="email"
                             autoFocus
+                            onChange={(event) => {
+                                console.log(event.target.value)
+                            }}
                         />
                         <TextField
                             margin="normal"
@@ -64,6 +69,9 @@ export default function SignIn() {
                             type="password"
                             id="password"
                             autoComplete="current-password"
+                            onChange={(event) => {
+                                console.log(event.target.value)
+                            }}
                         />
                         <FormControlLabel
                             control={<Checkbox value="remember" color="primary" />}
