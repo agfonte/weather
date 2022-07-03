@@ -4,11 +4,12 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import TextField from "@mui/material/TextField";
 import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
+import Grid from "@mui/material/Grid";
+import ThunderstormIcon from '@mui/icons-material/Thunderstorm';
 
 export default function WeatherPage(props) {
 
@@ -32,26 +33,22 @@ export default function WeatherPage(props) {
                                 alignItems: 'center',
                             }}
                         >
-                            <Box
-                                sx={{
-                                    width: 410,
-                                    maxWidth: '100%',
-                                    m: 2
-                                }}
-                            >
-                                <TextField
-                                    id="api-key"
-                                    label="Insert Api Key"
-                                    variant="filled"
-                                    fullWidth
-                                    onChange={(event) => {
-                                        props.setApiKey(event.target.value)
-                                    }}
-                                />
+                            <Box>
+                                <Grid container>
+                                    <Grid item lg={2}
+                                          sx={{mt: 1}}
+                                    >
+                                        <ThunderstormIcon />
+                                    </Grid>
+                                    <Grid item
+                                        lg={10}
+                                    >
+                                        <Typography variant="h6" color="#2565AE" gutterBottom component="div">
+                                            Search for a city to get weather data
+                                        </Typography>
+                                    </Grid>
+                                </Grid>
                             </Box>
-                            <Typography variant="h5" color="#2565AE" gutterBottom component="div">
-                                Search for a city to get weather data
-                            </Typography>
                             <Paper
                                 sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }}
                             >

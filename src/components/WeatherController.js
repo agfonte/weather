@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import WeatherPage from "./WeatherPage";
 
 export default function WeatherController() {
-    const [apiKey, setApiKey] = React.useState("");
+    const apiKey = process.env.REACT_APP_API_KEY;
     const [cityKey, setCityKey] = React.useState("");
     const [weather, setWeather] = React.useState("");
     const [temperature, setTemperature] = React.useState("");
@@ -58,8 +58,6 @@ export default function WeatherController() {
                 cityChange={cityChange}
                 setCityChange={setCityChange}
                 setCityText={setCityText}
-                apiKey={apiKey}
-                setApiKey={setApiKey}
                 weather={weather}
                 temperature={temperature}
             />
